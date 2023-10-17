@@ -24,20 +24,20 @@ void testCheckWin(){
             {'O', '4', 'O'},
             {'O', '8', '9'}
     };
-    CU_ASSERT_TRUE(checkWin('X',board1));
+    CU_ASSERT_TRUE(checkWin('X',board1)); //checking if x won horizontally.
 
     char grid2[3][3] = {{'O', 'O', 'O'},
                         {'X', 'X', 'X'},
                         {'X', 'X', 'X'}
     };
 
-    CU_ASSERT_TRUE(checkWin('O', grid2));
+    CU_ASSERT_TRUE(checkWin('O', grid2)).
 
     // Test vertical win
     char grid3[3][3] = {{'X', 'O', 'O'},
-                        {'X', 'O', 'O'},
+                        {'X', 'X', 'O'},
                         {'X', 'O', 'O'}
-    };
+    }; //When writing the comments for this function, I also realized that the function is impartial to what is happening in the rest of the grid as long as the conditions for winning are satisfied.
 
     CU_ASSERT_TRUE(checkWin('X', grid3));
 
@@ -85,7 +85,7 @@ void testIsDraw() {
 }
 
 void testOccupiedCell() {
-    // Initialize the grid
+    // Initialize the grid. Here I'm testing if a move is valid. 
     char gridh[3][3] = {{'X', 'O', ' '},
                         {' ', 'X', ' '},
                         {' ', 'O', 'O'}};
